@@ -1,0 +1,387 @@
+body{
+    /* background:black; */
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 1fr 0;
+    grid-template-areas: "izquierda derecha"
+                         "izquierda buscador";
+
+    position: relative;
+    /* overflow: hidden; */
+    
+}
+
+.izquierda{
+    display: grid;
+    grid-template-rows: 150px 1fr 1fr;
+    grid-template-areas:"logo"
+                        "arriba"
+                        "abajo";
+    /* grid-template-columns: 1fr; */
+    /* overflow: auto; */
+    height:98vh;
+    background: #B70000;
+    padding: 10px;
+    grid-area: izquierda;
+    
+    
+}
+.logo{
+    grid-area: logo;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+            
+.arriba{
+    grid-area: arriba;
+    overflow: auto;
+            
+}
+
+.arriba h1{
+    display:flex;
+    justify-content: center;
+    color:white;
+}
+.arriba ol{
+    padding: 0 25px;
+    color:white;
+    margin-bottom: 10px;
+
+}
+.arriba ol li{
+    margin-top:10px;
+    cursor:pointer;
+}
+.arriba ol li:hover{
+  text-decoration: underline;
+
+}
+.abajo{
+    grid-area: abajo;
+    overflow: auto;
+    margin-top: 20px;
+}
+.abajo h1{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 0 0; 
+    color:white;
+}
+.abajo ol {
+    list-style: none;
+    padding: 10px;
+    margin-top: 0;
+}
+.abajo ol li{
+  cursor: pointer;
+    display: flex;
+    margin: 15px 0;
+    color:white;
+  
+}
+.abajo ol li:hover{
+  text-decoration: underline;
+}
+.imagenpelicularecomendada{
+    width:50px;
+    height:50px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+.derecha{
+    display:grid;
+    grid-template-rows: auto 1fr 0px;
+    grid-template-areas:"header"
+                        "peliculas"
+                        "buscador";
+
+    grid-area:derecha;
+    
+    overflow: auto;
+    padding: 10px;
+    position: relative;
+    height:100vh;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-area: header;
+}
+.search{
+    margin-top:16px;
+}
+
+.search input{
+    background:#f0f0f0;
+    padding: 10px;
+    border-radius:10px;
+    font-size:16px;
+    width:330px;
+    border:none;
+    box-shadow: 0 0 10px #f0f0f0;
+    box-sizing:border-box;
+
+}
+
+.usuario{
+    display: flex;
+}
+
+.usuario img{
+    height: 50px;
+    width:50px;
+    border-radius: 100px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-left:445px;
+}
+
+.usuario  p{
+    margin-top:22px;
+}
+.todaslaspeliculas{
+    display:flex;
+    overflow: auto;
+    cursor: pointer;
+}
+
+.peliculas{
+   margin: 5px;
+   overflow: auto;
+   grid-area:peliculas;
+   
+
+}
+
+.loader{
+  width:350px;
+  height: 350px;
+}
+
+.pelicula{
+  /* display: flex; */
+    width: 300px;
+    height: 300px;
+    min-width: 300px;
+    margin-bottom: 50px;
+    margin-right: 15px;
+}
+/* .pelicula:hover{
+  text-decoration: underline;
+} */
+
+.pelicula img{
+    width: 100%;
+    height: 100%;
+}
+
+.titulo{
+    margin:0;
+}
+.titulo:hover{
+  text-decoration:underline;
+}
+.referencia{
+    margin-top: 15px;
+}
+.referencia h2{
+    margin: 0 0 15px 0;
+}
+
+.referencia p{
+    margin:0;
+}
+
+.fadeIn {
+  animation: 5000ms fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+.derecha.active{
+
+  grid-template-rows: auto 1fr 150px;
+
+
+}
+
+.buscador{
+    background: linear-gradient(to right, #ff0000, #ff458b);
+    display: flex;
+    /* height: 200px; */
+    width: 100%;
+    align-items: center;
+    padding-left: 40px;
+    color: white;
+    grid-area: buscador;
+    margin-bottom: 5px;
+
+}
+
+.buscador-image {
+    margin-right: 20px;
+  }
+  
+  .buscador-title {
+    margin: 10px;
+  }
+  .buscador-album {
+    font-size: 1.3em;
+    margin: 10px;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+/*modal*/
+
+.modal-btn {
+    text-align: center;
+    padding: .6em .8em .8em;
+    border: none;
+    color: white;
+    background: lightgray;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 -.2em rgba(0,0,0, .2);
+    outline: 0;
+    transition: .2s;
+    will-change: transform;
+  }
+  .modal-btn.primary {
+    background: #7dc800;
+  }
+  .modal-btn.warning {
+    background: #ff463b;
+  }
+  
+  .modal-btn:active {
+    transform: scale(.9);
+  }
+  .overlay {
+    background: rgba(0,0,0,.5);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*transition: 300s ease-in;*/
+    /*opacity: 0;*/
+    /*visibility: hidden;*/
+    display: none;
+    /* display: flex; */
+  }
+  .overlay.active {
+    /*opacity: 1;*/
+    /*visibility: visible;*/
+    display: flex;
+  }
+  .modal {
+  
+    width: 500px;
+    background: white;
+    padding: 2em;
+    border-radius: .5em;
+    text-align: center;
+    z-index: 2;
+    transform: translateY(-3000px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 500px;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .modal-content {
+    display: flex;
+  }
+  
+  .modal-content img {
+    width: 170px;
+    height: 256px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  .modal-content p {
+    align-self: center;
+  }
+  /*@keyframes animationIn {*/
+  @keyframes modalIn {
+    0% {
+      transform: translateY(-3000px);
+    }
+    60% {
+      transform: translateY(25px);
+    }
+    75% {
+      transform: translateY(-10px);
+    }
+    90% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  /*@keyframes animationOut {*/
+  @keyframes modalOut {
+    0% {
+      transform: translateY(5px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+    75% {
+      transform: translateY(25px);
+    }
+    100% {
+      transform: translateY(-3000px);
+    }
+  }
+  
+

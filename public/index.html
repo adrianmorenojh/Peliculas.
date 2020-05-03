@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>PELIS.</title>
+    <link rel="stylesheet" href="../src/styles/index.css">
+    <link rel="icon" type= 'image/jpg' href="./images/imagen.jpg">
+</head>
+<body>
+
+    <section class="container " id="container">
+        <section class="izquierda">
+
+            <div class="logo">
+                
+                <img src="./images/cine.jpg" alt="logo" width=250 height=120>
+            </div>
+            
+            <div class="arriba">
+            
+                <h1>Ultimos Estrenos.</h1>
+                <ol class="ultimos" id="ultimos">
+                    <img src="./images/loader.gif" width="50" height="50" alt="">
+                </ol>
+            </div>
+
+            <div class="abajo" id="abajo">
+
+                <h1>Peliculas Recomendadas</h1>
+                <ol class="recomendadas" id="recomendadas">
+                    <img src="./images/loader.gif" width="50" height="50" alt="">
+                </ol>
+
+            </div>
+
+        </section>
+
+        <section class="derecha" id="derecha">
+
+            <div class="header">
+                <div>
+                    <form action="" class="search" id="form">
+                        <input type="text" name="name" placeholder="Buscar un artista o tema favorito">
+                    </form>
+                </div>
+
+                <div class="usuario">
+                    <img src="./images/fotoperfil.jpg" width=70 heigth=70 alt="foto_usuario">
+                    <p>Adrian Moreno</p>
+                </div>
+            </div>
+
+            <div class="peliculas">
+                <div class="tipo">
+                    <div class="referencia">
+                        <p>a los golpes</p>
+                        <h2>accion</h2>
+                    </div>
+
+                    <div class="todaslaspeliculas">   
+                        <div class="pelicula" id="action" style="display: flex">
+                            <img class="loader"src="./images/loader.gif" width="50" height="50" alt="">
+                        </div>                                                                                                   
+                    </div>
+                </div>
+                <div class="tipo">
+                    <div class="referencia">
+                        <p>escalofriiio</p>
+                        <h2>terror</h2>
+                    </div>
+                    <div class="todaslaspeliculas">
+                        <div class="pelicula"  id="drama" style="display: flex">
+                            <img src="./images/loader.gif" width="50" height="50" alt="">                                                                        
+                        </div>  
+                    </div>             
+                </div>
+
+                <div class="tipo">
+                    <div class="referencia">
+                        <p>para niños</p>
+                        <h2>animados</h2>
+                    </div>
+                    <div class="todaslaspeliculas">
+                        <div class="pelicula"  id="animation" style="display: flex">
+                            <img src="./images/loader.gif" width="50" height="50" alt="">
+                        </div>          
+                    </div>    
+                </div>      
+            </div>
+            </div>
+            <div class="buscador" id="buscador"></div>
+        </section>
+
+        <div class="overlay" id="overlay">
+            </div>
+            <div class="modal" id="modal">
+              <h1>Título de pelicula</h1>
+              <div class="modal-content">
+                <img src="./images/foto.jpg" alt="" width="170" height="256">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione impedit maiores enim alias ex accusantium quasi cum autem, nam, voluptas tenetur laudantium quod! Odit voluptate illo, voluptas vel quia, quae.</p>
+              </div>
+              <div class="modal-buttons">
+                <button class="modal-btn primary" id="hide-modal">Cerrar Modal</button>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../src/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+</body>
+</html>
